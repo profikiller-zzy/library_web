@@ -7,7 +7,7 @@
         <div class="admin_main_header_left"></div>
         <div class="admin_main_header_right">
           <div class="icon-actions">
-            <i class="fa fa-home"></i>
+            <i class="fa fa-home" @click="gotoHome"></i>
             <Gvb_theme></Gvb_theme>
             <gvb_full_screen></gvb_full_screen>
           </div>
@@ -27,6 +27,15 @@
 import Admin_left_bar from "@/components/admin/admin_left_bar.vue";
 import Gvb_theme from "../../components/common/gvb_theme.vue";
 import Gvb_full_screen from "../../components/common/gvb_full_screen.vue";
+import {useRouter} from "vue-router";
+
+const router = useRouter()
+
+function gotoHome() {
+  router.push({
+    name: "admin_index"
+  })
+}
 </script>
 
 <style lang="scss">

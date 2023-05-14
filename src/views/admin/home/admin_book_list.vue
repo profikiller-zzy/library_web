@@ -273,7 +273,6 @@ async function removeBook(){
   for (i in data.id_list) {
     bookIdList.id_list.push(data.id_list[i])
   }
-  console.log(bookIdList)
   let res = await removeBookApi(bookIdList)
   if (res.code) {
     message.error(res.msg)
@@ -292,7 +291,7 @@ function openCreateBook() {
   CreateBookVisible.value = true
 }
 async function createBook() {
-  let res = createBookApi(bookInfo)
+  let res = await createBookApi(bookInfo)
   console.log(res)
   if (res.code) {
     message.error(res.msg)

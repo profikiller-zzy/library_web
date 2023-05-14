@@ -10,7 +10,7 @@
 
         <div class="header-right">
           <div class="icon-actions">
-            <i class="fa fa-home"></i>
+            <i class="fa fa-home" @click="gotoHome"></i>
             <gvb-theme></gvb-theme>
             <GvbFullScreen></GvbFullScreen>
           </div>
@@ -36,6 +36,14 @@ import GvbTheme from "../../components/common/gvb_theme.vue";
 import GvbAdminLeftSideBar from "../../components/user/gvb_user_leftSideBar.vue";
 import GvbFullScreen from "../../components/common/gvb_full_screen.vue";
 import GvbUserInfo from "../../components/user/gvb_user_info.vue";
+import {useRouter} from "vue-router";
+
+const router = useRouter()
+function gotoHome() {
+  router.push({
+    name: "user_index"
+  })
+}
 
 // 常量都用大写开头定义
 </script>
